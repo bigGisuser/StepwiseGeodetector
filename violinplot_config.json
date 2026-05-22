@@ -1,0 +1,63 @@
+{
+  "working_dir": "D:/极空间/林芝地震分析/data/Case2/input",
+  "value_raster": "LSD.tif",
+  "y_label": "Landslide density",
+  "width_cm": 5.0,
+  "height_cm": 3.0,
+  "dpi": 600,
+  "font_family": "Arial",
+  "font_size": 6,
+  "palette": "Set2",
+  "ignore_label_zero": true,
+  "show_quartile": true,
+  "plots": [
+    {
+      "label_raster": "VEG.tif",
+      "output": "../output/figures/violin_VEG.png",
+      "x_label": "Vegetation class",
+      "title": "Vegetation cover"
+    },
+    {
+      "label_raster": "PGA.tif",
+      "output": "../output/figures/violin_PGA.png",
+      "x_label": "PGA class",
+      "title": "PGA"
+    },
+    {
+      "label_raster": "DEM.tif",
+      "output": "../output/figures/violin_DEM.png",
+      "x_label": "Elevation class",
+      "title": "Elevation"
+    },
+    {
+      "label_raster": "ASP.tif",
+      "output": "../output/figures/violin_ASP.png",
+      "x_label": "Aspect class",
+      "title": "Aspect"
+    },
+    {
+      "label_raster": "SLP.tif",
+      "output": "../output/figures/violin_SLP.png",
+      "x_label": "Slope class",
+      "title": "Slope"
+    },
+    {
+      "label_raster": "FAULT.tif",
+      "output": "../output/figures/violin_FAULT.png",
+      "x_label": "Fault density class",
+      "title": "Fault density"
+    },
+    {
+      "label_raster": "HYD.tif",
+      "output": "../output/figures/violin_HYD.png",
+      "x_label": "River density class",
+      "title": "River density"
+    },
+    {
+      "label_raster": "LRD.tif",
+      "output": "../output/figures/violin_ROAD.png",
+      "x_label": "Road density class",
+      "title": "Road density"
+    }
+  ]
+}

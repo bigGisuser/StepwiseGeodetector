@@ -1,0 +1,14 @@
+{
+  "input_excel": "GeoDetector_2018_Example(Disease Dataset)_test.xlsm",
+  "output_folder": "disease_example_stepwise_output",
+  "value_col": "incidence",
+  "factor_cols": [
+    "type",
+    "region",
+    "level"
+  ],
+  "lam": 1,
+  "p_threshold": 0.05,
+  "min_group_size": 1,
+  "verbose": true
+}

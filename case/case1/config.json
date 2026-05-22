@@ -1,0 +1,10 @@
+{
+  "input_excel": "synthetic_stepwise_geodetector_groups_123.xlsx",
+  "output_folder": "synthetic_stepwise_output_config",
+  "value_col": "Y",
+  "factor_cols": ["X1", "X2", "X3"],
+  "lam": 1,
+  "p_threshold": 0.05,
+  "min_group_size": 1,
+  "verbose": true
+}

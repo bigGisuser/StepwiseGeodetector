@@ -1,0 +1,81 @@
+# Stepwise GeoDetector input configuration file
+# ---------------------------------------------------------------------
+# This file defines the workspace, dependent variable raster, candidate
+# factor rasters, output folder, and model parameters for running:
+#
+#     StepwiseGeodetector.py
+#
+# The configuration file uses English keys and can be edited directly.
+# Lines beginning with # are comments and will be ignored by the script.
+# The updated Python script also supports inline comments after #.
+# ---------------------------------------------------------------------
+
+# 1. Workspace folder
+# This folder contains the dependent variable raster and all candidate
+# explanatory factor rasters. If this folder is written as a relative path, it is resolved relative to
+# the folder containing this input.txt file.
+# Example project structure:
+#   project_root/
+#     StepwiseGeodetector.py
+#     input.txt
+#     data/Case2/input/LSD.tif
+#
+# If input.txt is already inside the raster folder, use: input_folder: .
+input_folder: input
+
+# 2. Dependent variable raster
+# This raster is used as the response variable Y in the GeoDetector analysis.
+# Example:
+# - LSD.tif may represent landslide density, landslide occurrence, or another
+#   landslide-related response variable, depending on how it was prepared.
+value_file: LSD.tif
+
+# 3. Candidate factor raster files
+# Each factor raster should be a categorical raster with integer class labels.
+# Invalid cells should be coded as 0 or NoData.
+#
+# Suggested meanings of the current rasters:
+# - PGA.tif   : peak ground acceleration classes
+# - LRD.tif   : landslide density or landslide-related density classes
+# - VEG.tif   : vegetation classes generated from the GB attribute field
+# - ASP.tif   : aspect classes
+# - DEM.tif   : elevation classes
+# - FAULT.tif : fault density classes
+# - HYD.tif   : river or hydrological density classes
+# - SLP.tif   : slope gradient classes
+#
+# Keep one raster file name on each line after factor_files:.
+factor_files:
+PGA.tif
+LRD.tif
+VEG.tif
+ASP.tif
+DEM.tif
+FAULT.tif
+HYD.tif
+SLP.tif
+
+# 4. Output folder
+# The script will save the generated interaction rasters, all candidate
+# result tables, selected factor path table, and text report in this folder.
+# If this is a relative path, it will be created inside input_folder.
+output_folder: output
+
+# 5. Lambda parameter
+# Lambda controls the penalty intensity in the S statistic:
+#
+#     S_k = Delta q_k - lambda * ln(VR_k / VR_{k-1})
+#
+# A larger lambda applies a stronger penalty to increases in VR.
+# A smaller lambda gives more weight to explanatory gain measured by Delta q.
+lambda: 1
+
+# 6. P-value threshold
+# Candidate factors or candidate combinations with p-values larger than this
+# threshold will not be retained in the stepwise selection process.
+p_threshold: 0.05
+
+# 7. Minimum group size parameter
+# In the current script version, single-sample strata are not removed.
+# This parameter is kept for compatibility and reporting only.
+min_group_size: 1
